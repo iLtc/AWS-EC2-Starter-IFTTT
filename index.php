@@ -26,10 +26,6 @@ $ec2 = new Aws\Ec2\Ec2Client( $config );
 
 // TODO: Check Instance Status
 
-try {
 $result = $ec2->startInstances([
     'InstanceIds' => [AWS_EC2_INSTANCE_ID]
 ]);
-} catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
-}
