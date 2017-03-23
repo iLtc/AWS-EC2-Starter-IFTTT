@@ -5,3 +5,5 @@ define('AWS_SECRET_ACCESS_KEY', '');
 
 define('AWS_EC2_INSTANCE_ID', '');
 define('AWS_EC2_INSTANCE_REGION', '');
+
+define('IFTTT_WEBHOOK_TOKEN', '');
