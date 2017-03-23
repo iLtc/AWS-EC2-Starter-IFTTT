@@ -11,14 +11,18 @@ require 'vendor/autoload.php';
 // TODO: Check if config.php exists
 require 'config.php';
 
-$ec2 = new Aws\Ec2\Ec2Client([
+$config = [
     'version' => 'latest',
-    'region'  => AWS_EC2_INSTANCE_REGION,
-    'credentials' => [
+    'region'  => AWS_EC2_INSTANCE_REGION
+];
+
+if( !empty(AWS_ACCESS_KEY_ID) )
+    $config['credentials'] = [
         'key'    => AWS_ACCESS_KEY_ID,
         'secret' => AWS_SECRET_ACCESS_KEY,
-    ],
-]);
+    ];
+
+$ec2 = new Aws\Ec2\Ec2Client( $config );
 
 // TODO: Check Instance Status
 
