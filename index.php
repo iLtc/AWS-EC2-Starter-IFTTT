@@ -1,4 +1,11 @@
 <?php
+$token = $_REQUEST['token'];
+
+if( empty($token) || $token != IFTTT_WEBHOOK_TOKEN ){
+    echo 'Error: Token mismatch';
+    exit;
+}
+
 require 'vendor/autoload.php';
 require 'config.php';
 
