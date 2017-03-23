@@ -1,15 +1,15 @@
 <?php
+require 'vendor/autoload.php';
+
+// TODO: Check if config.php exists
+require 'config.php';
+
 $token = $_REQUEST['token'];
 
 if( empty($token) || $token != IFTTT_WEBHOOK_TOKEN ){
     echo 'Error: Token mismatch';
     exit;
 }
-
-require 'vendor/autoload.php';
-
-// TODO: Check if config.php exists
-require 'config.php';
 
 $config = [
     'version' => 'latest',
