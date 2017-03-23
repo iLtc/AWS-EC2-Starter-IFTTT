@@ -7,6 +7,8 @@ if( empty($token) || $token != IFTTT_WEBHOOK_TOKEN ){
 }
 
 require 'vendor/autoload.php';
+
+// TODO: Check if config.php exists
 require 'config.php';
 
 $ec2 = new Aws\Ec2\Ec2Client([
